@@ -7,6 +7,7 @@ const lapController=require('../controller/laptop');
 const accessController=require('../controller/accesories')
 route.get("/home",homeController.home);
 route.get("/homecaro",homeController.homecaro);
+route.get("/futurecaro",homeController.futurecaro)
 route.get("/phone",phoneController.phone);
 route.get("/phonecarosal",phoneController.carosalPhone);
 route.get("/pad",padController.pad)
