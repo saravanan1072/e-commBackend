@@ -1,140 +1,146 @@
-const phone=(req,res)=>{
-    res.send([
-        {
-        "id":"1",
-        "title":"iQOO Z7 5G by vivo",
-        "description":"Norway Blue, 6GB RAM, 128GB Storage | Dimensity 920 5G 6nm Processor | 64MP OIS Ultra Stable Camera | Segment's Brightest AMOLED Display | 44W ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/611jxZCY1bL._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":" 18,999",
-        "discount":"14",
-        "actualPrice":"21,999",
-        "rating":"4",
-        "ratingCount":"87",
-    },  {
-        "id":"2 ",
-        "title":"Redmi Note 11 Pro",
-        "description":"Stealth Black, 8GB RAM, 128GB Storage)| 67W Turbo Charge | 120Hz Super AMOLED Display | Charger Included | Get 2 Months of YouTube Premium Free! ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/717DeSsnXpL._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":"20999 ",
-        "discount":" 16",
-        "actualPrice":"24999",
-        "rating":"4",
-        "ratingCount":"789",
 
-    },  {
-        "id":"3 ",
-        "title":"Samsung Galaxy  ",
-        "description":"Samsung Galaxy M32 (Black, 4GB RAM, 64GB | FHD+ sAMOLED 90Hz Display | 6000mAh Battery | 64MP Quad Camera ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71Q3iSQAwAS._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":"14,499 ",
-        "discount":" 14",
-        "actualPrice":"17,999",
-        "rating":"4.2",
-        "ratingCount":"1067",
+const phoneStructure=require('../model/phone')
+const phone=async(req,res)=>{
+    const fetchData=await phoneStructure.find() 
+    res.send(fetchData)
 
-    },  {
-        "id":"4 ",
-        "title":"Oppo A78 5G ",
-        "description":"Oppo A78 5G Glowing Blue, 8GB RAM, 128 Storage) | 5000 mAh Battery with 33W SUPERVOOC Charger| 50MP AI Camera | 90Hz Refresh Rate | with No Cost EMI/Additional ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/8104evx11QL._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":" 18,999",
-        "discount":"18,999 ",
-        "actualPrice":"21,999",
-        "rating":"4",
-        "ratingCount":"256",
+    
+   // res.send([
+    //    {
+    //     "id":"1",
+    //     "title":"iQOO Z7 5G by vivo",
+    //     "description":"Norway Blue, 6GB RAM, 128GB Storage | Dimensity 920 5G 6nm Processor | 64MP OIS Ultra Stable Camera | Segment's Brightest AMOLED Display | 44W ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/611jxZCY1bL._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":" 18,999",
+    //     "discount":"14",
+    //     "actualPrice":"21,999",
+    //     "rating":"4",
+    //     "ratingCount":"87",
+    // },  {
+    //     "id":"2 ",
+    //     "title":"Redmi Note 11 Pro",
+    //     "description":"Stealth Black, 8GB RAM, 128GB Storage)| 67W Turbo Charge | 120Hz Super AMOLED Display | Charger Included | Get 2 Months of YouTube Premium Free! ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/717DeSsnXpL._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":"20999 ",
+    //     "discount":" 16",
+    //     "actualPrice":"24999",
+    //     "rating":"4",
+    //     "ratingCount":"789",
 
-    },  {
-        "id":"5 ",
-        "title":"OPPO A74 5G",
-        "description":" Fantastic Purple,6GB RAM,128GB Storage) with No Cost EMI/Additional Exchange Offers ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71geVdy6-OS._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":" 14,999",
-        "discount":" 21",
-        "actualPrice":"18,999",
-        "rating":"3.9",
-        "ratingCount":"4678",
+    // },  {
+    //     "id":"3 ",
+    //     "title":"Samsung Galaxy  ",
+    //     "description":"Samsung Galaxy M32 (Black, 4GB RAM, 64GB | FHD+ sAMOLED 90Hz Display | 6000mAh Battery | 64MP Quad Camera ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71Q3iSQAwAS._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":"14,499 ",
+    //     "discount":" 14",
+    //     "actualPrice":"17,999",
+    //     "rating":"4.2",
+    //     "ratingCount":"1067",
 
-    },  {
-        "id":"6",
-        "title":"Samsung Galaxy Z Fold4 5G",
-        "description":"Beige, 12GB RAM, 512GB Storage) with No Cost EMI/Additional Exchange Offers ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/714QNdK8BWL._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":"1,64,999 ",
-        "discount":"21",
-        "actualPrice":"1,87,000",
-        "rating":"4.1",
-        "ratingCount":"23",
+    // },  {
+    //     "id":"4 ",
+    //     "title":"Oppo A78 5G ",
+    //     "description":"Oppo A78 5G Glowing Blue, 8GB RAM, 128 Storage) | 5000 mAh Battery with 33W SUPERVOOC Charger| 50MP AI Camera | 90Hz Refresh Rate | with No Cost EMI/Additional ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/8104evx11QL._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":" 18,999",
+    //     "discount":"18,999 ",
+    //     "actualPrice":"21,999",
+    //     "rating":"4",
+    //     "ratingCount":"256",
 
-    },  {
-        "id":"7 ",
-        "title":"Apple iPhone 14 Pro (1 TB) - Silver",
-        "description":"15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion |48MP Main camera for up to 4x greater resolution ",
-        "image":" https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61lKQWyMdDL._AC_UY327_FMwebp_QL65_.jpg",
-        "discountPrice":"1,72,093 ",
-        "discount":"4 ",
-        "actualPrice":"1,79,999",
-        "rating":"3.5",
-        "ratingCount":"8909",
+    // },  {
+    //     "id":"5 ",
+    //     "title":"OPPO A74 5G",
+    //     "description":" Fantastic Purple,6GB RAM,128GB Storage) with No Cost EMI/Additional Exchange Offers ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71geVdy6-OS._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":" 14,999",
+    //     "discount":" 21",
+    //     "actualPrice":"18,999",
+    //     "rating":"3.9",
+    //     "ratingCount":"4678",
 
-    },  {
-        "id":"8 ",
-        "title":"MI 10T 5G Cosmic Black",
-        "description":"MI 10T 5G Cosmic Black, 8GB RAM, 128GB Storage - | Additional Exchange/No Cost EMI Offers ",
-        "image":" https://m.media-amazon.com/images/I/71phm03oYhL._AC_UY327_QL65_.jpg",
-        "discountPrice":" 24,999",
-        "discount":"42 ",
-        "actualPrice":"42,999",
-        "rating":"4",
-        "ratingCount":"23",
+    // },  {
+    //     "id":"6",
+    //     "title":"Samsung Galaxy Z Fold4 5G",
+    //     "description":"Beige, 12GB RAM, 512GB Storage) with No Cost EMI/Additional Exchange Offers ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/714QNdK8BWL._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":"1,64,999 ",
+    //     "discount":"21",
+    //     "actualPrice":"1,87,000",
+    //     "rating":"4.1",
+    //     "ratingCount":"23",
 
-    },  {
-        "id":"9 ",
-        "title":"Nokia G21 Android Smartphone,",
-        "description":" Dual SIM, 3-Day Battery Life, 6GB RAM + 128GB Storage, 50MP Triple AI Camera | Nordic Blue ",
-        "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71x+m2-yb7L._AC_UY327_FMwebp_QL65_.jpg ",
-        "discountPrice":"14,399 ",
-        "discount":"14 ",
-        "actualPrice":"17,499",
-        "rating":"4",
-        "ratingCount":"45",
+    // },  {
+    //     "id":"7 ",
+    //     "title":"Apple iPhone 14 Pro (1 TB) - Silver",
+    //     "description":"15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion |48MP Main camera for up to 4x greater resolution ",
+    //     "image":" https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61lKQWyMdDL._AC_UY327_FMwebp_QL65_.jpg",
+    //     "discountPrice":"1,72,093 ",
+    //     "discount":"4 ",
+    //     "actualPrice":"1,79,999",
+    //     "rating":"3.5",
+    //     "ratingCount":"8909",
 
-    },  {
-        "id":"10 ",
-        "title":"OnePlus 11R 5G",
-        "description":"Dual SIM, 3-Day Battery Life, 6GB RAM + 128GB Storage | Additional Exchange/No Cost EMI Offers",
-        "image":" https://m.media-amazon.com/images/I/71qjUzUt+ML._AC_UY327_QL65_.jpg",
-        "discountPrice":" 44,999",
-        "discount":"9 ",
-        "actualPrice":"48,000",
-        "rating":"4.5",
-        "ratingCount":"4",
+    // },  {
+    //     "id":"8 ",
+    //     "title":"MI 10T 5G Cosmic Black",
+    //     "description":"MI 10T 5G Cosmic Black, 8GB RAM, 128GB Storage - | Additional Exchange/No Cost EMI Offers ",
+    //     "image":" https://m.media-amazon.com/images/I/71phm03oYhL._AC_UY327_QL65_.jpg",
+    //     "discountPrice":" 24,999",
+    //     "discount":"42 ",
+    //     "actualPrice":"42,999",
+    //     "rating":"4",
+    //     "ratingCount":"23",
 
-    },  {
-        "id":"11 ",
-        "title":"Apple iPhone 14 Pro ",
-        "description":" 15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion | 48MP Main camera for up to 4x greater resolution",
-        "image":"https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_QL65_.jpg ",
-        "discountPrice":"1,23,099 ",
-        "discount":"5 ",
-        "actualPrice":"1,29,900",
-        "rating":"4",
-        "ratingCount":"10",
+    // },  {
+    //     "id":"9 ",
+    //     "title":"Nokia G21 Android Smartphone,",
+    //     "description":" Dual SIM, 3-Day Battery Life, 6GB RAM + 128GB Storage, 50MP Triple AI Camera | Nordic Blue ",
+    //     "image":"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71x+m2-yb7L._AC_UY327_FMwebp_QL65_.jpg ",
+    //     "discountPrice":"14,399 ",
+    //     "discount":"14 ",
+    //     "actualPrice":"17,499",
+    //     "rating":"4",
+    //     "ratingCount":"45",
 
-    }
-    , {
-        "id":"12",
-        "title":"Apple iPhone 9 Pro ",
-        "description":" 15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion | 48MP Main camera for up to 4x greater resolution",
-        "image":"https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_QL65_.jpg ",
-        "discountPrice":"1,23,099 ",
-        "discount":"5 ",
-        "actualPrice":"1,29,900",
-        "rating":"4",
-        "ratingCount":"10",
+    // },  {
+    //     "id":"10 ",
+    //     "title":"OnePlus 11R 5G",
+    //     "description":"Dual SIM, 3-Day Battery Life, 6GB RAM + 128GB Storage | Additional Exchange/No Cost EMI Offers",
+    //     "image":" https://m.media-amazon.com/images/I/71qjUzUt+ML._AC_UY327_QL65_.jpg",
+    //     "discountPrice":" 44,999",
+    //     "discount":"9 ",
+    //     "actualPrice":"48,000",
+    //     "rating":"4.5",
+    //     "ratingCount":"4",
 
-    }
+    // },  {
+    //     "id":"11 ",
+    //     "title":"Apple iPhone 14 Pro ",
+    //     "description":" 15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion | 48MP Main camera for up to 4x greater resolution",
+    //     "image":"https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_QL65_.jpg ",
+    //     "discountPrice":"1,23,099 ",
+    //     "discount":"5 ",
+    //     "actualPrice":"1,29,900",
+    //     "rating":"4",
+    //     "ratingCount":"10",
 
-  ]  )
+    // }
+    // , {
+    //     "id":"12",
+    //     "title":"Apple iPhone 9 Pro ",
+    //     "description":" 15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion | 48MP Main camera for up to 4x greater resolution",
+    //     "image":"https://m.media-amazon.com/images/I/61HHS0HrjpL._AC_UY327_QL65_.jpg ",
+    //     "discountPrice":"1,23,099 ",
+    //     "discount":"5 ",
+    //     "actualPrice":"1,29,900",
+    //     "rating":"4",
+    //     "ratingCount":"10",
+
+    // }
+
+ // ]  )
 
 }
 
