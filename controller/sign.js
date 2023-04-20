@@ -47,7 +47,7 @@ const signinController=async(req,res)=>{
     if(data.email === fetchuser ){
         await bcrypt.compare(data.password,fetchpassword,(err,valid)=>{
             if(err){
-                console.log(err);
+                res.send("err")
             }
             else{
                 console.log(valid);
